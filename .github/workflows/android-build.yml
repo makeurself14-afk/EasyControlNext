@@ -19,7 +19,8 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
-
+        with:
+          packages: 'platform-tools'
       - name: Build server
         working-directory: easycontrolnext
         run: ./gradlew assembleDebug -p server
@@ -37,3 +38,4 @@ jobs:
         with:
           name: EasyControlNext-debug
           path: easycontrolnext/app/build/outputs/apk/debug/*.apk
+
